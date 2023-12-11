@@ -42,6 +42,11 @@ input_lastLayer = model.classifier[6].in_features
 model.classifier[6] = nn.Linear(input_lastLayer,10)    #Altering the VGG16 model to classify into 10 outputs as is needed for our dataset
 model = model.to(device)                               #loading the transfered and altered model 
 
+#Loss Function and Optimiser
+loss_func = nn.CrossEntropyLoss()
+optimiser = torch.optim.SGD(model.parameters(), lr = learnrate, momentum = 0.9,weight_decay=5e-4) # weight decay helps prevent overfitting   
+total_step = len(train_dataloader)                    #depends on the batch size 
+
 #Training the Model in steps according to the batchsize of the training and testing dataset, over a for loop
 for epoch in range(epochs):
    for i, (image , labels) in enumerate(train_dataloader):
