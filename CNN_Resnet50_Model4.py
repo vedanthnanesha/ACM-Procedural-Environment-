@@ -14,7 +14,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")   #checkin
 print(device)
 
 #Transforms for converting the dataset image values to tensors with additional Data Augmentation and Resizing
-rans_train = transf.Compose([
+trans_train = transf.Compose([
     transf.Resize(size=(224, 224)),         #this is the size of the input layer of the resnet50 model
     transf.RandomHorizontalFlip(),          #randomly flips an image
     transf.RandomRotation(10),              #randomly rotates an image 
