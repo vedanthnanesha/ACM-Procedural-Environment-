@@ -1,4 +1,4 @@
-# ACM-Procedural-Environment-
+About the Models Used: 
 
 Model 1 = The main file where this can be found is CNNModel1.ipynb and the raw code is in the same .py file. 
 In this model I have taken a simple approach and built a simple CNN with a few convolutional, pooling and fully connnected layers. While transforming and loading the dataset I have only used normalisation, no data augmentation techniques were used. 
